@@ -1,0 +1,31 @@
+<td-layout-nav title="Latihan Industri" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span fxFlex [ngStyle.xs]="{'font-size.px': 14, color: 'white'}"
+          [ngStyle.sm]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.md]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.lg]="styleLgExp">Latihan Industri</span>
+    <span flex></span>
+
+    <span fxLayoutAlign="end center" fxFlex [ngStyle.xs]="{'font-size.px': 14, color: 'white'}"
+          [ngStyle.sm]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.md]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.lg]="styleLgExp">    <mat-icon>person</mat-icon>Timothy Lampung</span>
+  </div>
+
+  <div fxFlexOffset="5%" mat-content flex>
+
+  </div>
+
+
+
+
+  <td-layout-footer>
+    <div layout="row" layout-align="start center">
+      <span class="mat-caption">Copyright &copy; 2017 Timothy Lampung. All rights reserved</span>
+      <span flex></span>
+    </div>
+  </td-layout-footer>
+</td-layout-nav>

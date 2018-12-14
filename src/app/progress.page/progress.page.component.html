@@ -1,0 +1,59 @@
+<td-layout-nav title="Latihan Industri" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span fxFlex [ngStyle.xs]="{'font-size.px': 14, color: 'white'}"
+          [ngStyle.sm]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.md]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.lg]="styleLgExp">Latihan Industri</span>
+    <span flex></span>
+
+    <span fxLayoutAlign="end center" fxFlex [ngStyle.xs]="{'font-size.px': 14, color: 'white'}"
+          [ngStyle.sm]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.md]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.lg]="styleLgExp">    <mat-icon>person</mat-icon>Timothy Lampung</span>
+  </div>
+
+
+  <div flex>
+    <div fxFlex mat-content>
+
+      <div layout-gt-md="row">
+        <div fxFlex class="parent" fxLayoutAlign="space-evenly center">
+
+          <mat-card class="child" flex-md="20" flex-lg="20" *ngFor=" let item of items">
+
+            <mat-card-title><p fxLayoutAlign="start center" fxFlex [ngStyle.xs]="{'font-size.px': 14}"
+                               [ngStyle.sm]="{'font-size.px': 20}"
+                               [ngStyle.md]="{'font-size.px': 20}"
+                               [ngStyle.lg]="styleLgExp"> 12-June-2012</p></mat-card-title>
+
+            <mat-card-content>
+              <p>Today Was fun</p>
+            </mat-card-content>
+
+
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <td-layout-footer>
+    <div layout="row" layout-align="start center">
+      <span class="mat-caption">Copyright &copy; 2017 Timothy Lampung. All rights reserved</span>
+      <span flex></span>
+    </div>
+  </td-layout-footer>
+</td-layout-nav>
+<a mat-fab color="accent" class="mat-fab-bottom-right" (click)="showAddDialog()">
+<mat-icon>add</mat-icon>
+</a>

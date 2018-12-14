@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>New Progress Report</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editorForm">
+    <div layout="row" class="pad-bottom" flex>
+      <mat-form-field flex>
+        <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choose a date" flex>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div layout="row" class="pad-bottom" flex="100">
+        <td-text-editor formControlName="entry" flex [options]="options" #textEditor></td-text-editor>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button align="left" mat-raised-button color="accent" (click)="save(editorForm.value)" [disabled]="!editorForm.valid">
+    Add
+  </button>
+</div>
+

@@ -1,0 +1,206 @@
+<td-layout-nav title="Latihan Industri" navigationRoute="/">
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span fxFlex [ngStyle.xs]="{'font-size.px': 14, color: 'white'}"
+          [ngStyle.sm]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.md]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.lg]="styleLgExp">Latihan Industri</span>
+    <span flex></span>
+
+    <span fxLayoutAlign="end center" fxFlex [ngStyle.xs]="{'font-size.px': 14, color: 'white'}"
+          [ngStyle.sm]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.md]="{'font-size.px': 20, color: 'white'}"
+          [ngStyle.lg]="styleLgExp">    <mat-icon>person</mat-icon>Timothy Lampung</span>
+  </div>
+
+
+  <div flex>
+
+    <div flex fxFlexOffset="5">
+      <div layout-gt-md="row">
+
+
+        <div flex-gt-md="60">
+
+          <form>
+            <mat-card class="mat-card">
+              <mat-card-title>
+                <h4 fxLayoutAlign="start center" fxFlex [ngStyle.xs]="{'font-size.px': 14}"
+                    [ngStyle.sm]="{'font-size.px': 20}"
+                    [ngStyle.md]="{'font-size.px': 20}"
+                    [ngStyle.lg]="styleLgExp">
+                  <mat-icon flex="5">person</mat-icon>
+                  Student's Profiles
+                </h4>
+              </mat-card-title>
+
+              <!--<mat-card-subtitle>List of contacts</mat-card-subtitle>-->
+
+              <div class="form">
+
+                <mat-form-field>
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Name">
+                </mat-form-field>
+
+                <mat-form-field>
+                  <mat-label>Matric Number</mat-label>
+                  <input matInput placeholder="Matric Number">
+                </mat-form-field>
+
+                <mat-form-field>
+                  <mat-label>Identity Card No.</mat-label>
+                  <input matInput placeholder="Identity Card No.">
+                </mat-form-field>
+
+                <mat-form-field>
+                  <mat-label>Email</mat-label>
+                  <input type="email" matInput placeholder="Email">
+                </mat-form-field>
+
+                <mat-form-field>
+                  <mat-label>Contact No</mat-label>
+                  <input type="tel" matInput placeholder="Contact No">
+                </mat-form-field>
+
+                <mat-form-field>
+                  <mat-label>Latest CGPA</mat-label>
+                  <input type="number" min="0" max="4" matInput placeholder="Latest CGPA">
+                </mat-form-field>
+
+
+                <mat-form-field>
+                  <mat-select placeholder="Department">
+                    <mat-option value="0">Computer Science Department</mat-option>
+                    <mat-option value="1">COMMUNICATION TECHNOLOGY AND NETWORK DEPARTMENT</mat-option>
+                    <mat-option value="2">MULTIMEDIA DEPARTMENT</mat-option>
+                    <mat-option value="3">SOFTWARE ENGINEERING AND INFORMATION SYSTEM DEPARTMENT</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+              </div>
+
+              <br>
+              <br>
+              <mat-card-actions fxLayoutAlign="end center">
+                <button type="submit" mat-raised-button color="primary">SAVE</button>
+              </mat-card-actions>
+
+            </mat-card>
+          </form>
+
+        </div>
+
+
+        <div flex-gt-md="30">
+          <mat-card>
+            <mat-card-title><h4 fxLayoutAlign="start center" fxFlex [ngStyle.xs]="{'font-size.px': 14}"
+                                [ngStyle.sm]="{'font-size.px': 20}"
+                                [ngStyle.md]="{'font-size.px': 20}"
+                                [ngStyle.lg]="styleLgExp">Internship Details</h4></mat-card-title>
+
+
+            <mat-card-header>
+              <mat-card-subtitle class="mat-card-subtitle ">
+                <h3>Date Start : {{dateStart | date}}</h3>
+                <h3>Date End : {{dateEnd | date}}</h3>
+
+              </mat-card-subtitle>
+            </mat-card-header>
+
+
+            <div class="form">
+
+              <mat-form-field>
+                <mat-label>Company Name</mat-label>
+                <input matInput placeholder="Company Name">
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Company State</mat-label>
+                <input matInput placeholder="Company State">
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-select placeholder="Status">
+                  <mat-option value="0">PENDING</mat-option>
+                  <mat-option value="1">APPROVED</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Visiting Lecturer</mat-label>
+                <input matInput placeholder="Visiting Lecturer">
+              </mat-form-field>
+
+            </div>
+
+
+            <mat-card-actions fxLayoutAlign="end center">
+              <button mat-raised-button color="primary">ORGANISATION EVALUATION</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+
+
+      <div flex-gt-md="60">
+        <mat-card>
+          <mat-card-title>
+            <h4 fxLayoutAlign="start center" fxFlex [ngStyle.xs]="{'font-size.px': 14}"
+                [ngStyle.sm]="{'font-size.px': 20}"
+                [ngStyle.md]="{'font-size.px': 20}"
+                [ngStyle.lg]="styleLgExp">
+              <mat-icon flex="5">person</mat-icon>
+              Industrial Supervisor Profile
+            </h4>
+          </mat-card-title>
+
+          <div class="form">
+
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Industrial Supervisor Name">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Identity Card No.</mat-label>
+              <input matInput placeholder="Identity Card No.">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Contact No</mat-label>
+              <input matInput placeholder="Contact No">
+            </mat-form-field>
+          </div>
+
+          <mat-card-actions fxLayoutAlign="end center">
+            <button mat-raised-button color="primary">SAVE</button>
+          </mat-card-actions>
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <td-layout-footer>
+    <div layout="row" layout-align="start center">
+      <span class="mat-caption">Copyright &copy; 2017 Timothy Lampung. All rights reserved</span>
+      <span flex></span>
+    </div>
+  </td-layout-footer>
+</td-layout-nav>
+
+
+<!--<a mat-fab color="accent" class="mat-fab-bottom-left" (click)="testDialog()">-->
+<!--<mat-icon>add</mat-icon>-->
+<!--</a>-->
+
+
