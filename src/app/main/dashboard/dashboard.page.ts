@@ -8,6 +8,7 @@ import { Customer } from '../../../model/customer.model';
 @Component({
   selector: 'qs-dashboard',
   templateUrl: './dashboard.page.html',
+  styleUrls: ['./dashboard.styles.scss']
 })
 export class DashboardPage {
 
@@ -19,6 +20,7 @@ export class DashboardPage {
 
 
   constructor(private crudService: CrudService) {
+    this.getCustomersList();
   }
 
   addNewCustomer(): void {
@@ -26,12 +28,14 @@ export class DashboardPage {
       name: this.name,
       phoneNo : this.phoneNo,
       age: this.age
+
     });
   }
 
   getCustomersList(): void {
-    this.crudService.getCustomersList().snapshotChanges().pipe(map(changes =>
-        changes.map(c => ({key: c.payload.key, ...c.payload.val()}))
+    this.crudService.getCustomersList().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       )
     ).subscribe(customers => {
       console.log(customers);
@@ -39,14 +43,14 @@ export class DashboardPage {
     });
   }
 
-  deleteCustomer() {
-    this.crudService.deleteCustomer(this.id);
+  deleteCustomer(id :string): void{
+    this.crudService.deleteCustomer(id);
   }
-  deleteAll(){
+  deleteAll(): void{
     this.crudService.deleteAll();
   }
 
-  updateCustomer(){
+  updateCustomer(): void{
     this.crudService.updateCustomer(this.id, {
       name: this.name,
       phoneNo : this.phoneNo,

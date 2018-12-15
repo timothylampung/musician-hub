@@ -1,5 +1,5 @@
 export interface Customer {
-  $key?: string;
+  key?: string;
   name: string;
   age: number;
   phoneNo: string;

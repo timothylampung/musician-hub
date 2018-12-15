@@ -7,9 +7,10 @@ export class CrudService {
 
   private dbPath = '/customers';
 
+
   customersRef: AngularFireList<Customer> = null;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase,) {
     this.customersRef = db.list(this.dbPath);
   }
 
@@ -25,7 +26,7 @@ export class CrudService {
     this.customersRef.remove(key).catch(error => this.handleError(error));
   }
 
-  getCustomersList(): AngularFireList<Customer> {
+  getCustomersList(): AngularFireList<any> {
     return this.customersRef;
   }
 

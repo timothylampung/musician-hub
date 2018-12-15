@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {DashboardPage} from './main/dashboard/dashboard.page';
 import {MainLayout} from './main/main.layout';
 import { FriendMainComponent } from './friends/friend-core/friend-main.component';
+import { FriendListComponent } from './friends/friend-list/friend-list.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,7 @@ const routes: Routes = [
       },
       {
         path: 'dashboard',
-        component: DashboardPage,
+        component: FriendListComponent,
       }
     ],
   },

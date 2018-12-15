@@ -1,11 +1,26 @@
-<input [(ngModel)]="name"/>
-<input [(ngModel)]="phoneNo"/>
-<input [(ngModel)]="age"/>
+<input placeholder="Phone No" [(ngModel)]="phoneNo"/>
+<input placeholder="Age" type="number" [(ngModel)]="age"/>
+<input placeholder="Name" [(ngModel)]="name"/>
 
+<button (click)="addNewCustomer()">ADD NEW CUSTOMER</button>
 
-<button (click)="addNewCustomer()">ADD NEW NODE</button>
-<button (click)="getCustomersList()">POPULATE CUSTOMER</button>
+<button (click)="getCustomersList()">GET ALL CUSTOMER</button>
 <input [(ngModel)]="id"/>
 <button (click)="deleteCustomer()">DELETE CUSTOMER BY ID</button>
-<button (click)="deleteAll()">TRUNCATE NODES</button>
-<button (click)="updateCustomer()">UPDATED CUSTOMER</button>
+<button (click)="deleteAll()">DELETE ALL CUSTOMER</button>
+<button (click)="updateCustomer()">UPDATE CUSTOMER</button>
+
+  <mat-nav-list flex>
+    <ng-template let-item let-i="index" let-last="last" ngFor [ngForOf]="customers">
+      <a mat-list-item>
+        <h4 matLine>{{item.name}}</h4>
+        <p matLine>{{item.phoneNo}}</p>
+        <p matLine>{{item.age}}</p>
+        <p matLine>{{item?.key}}</p>
+        <button (click)="deleteCustomer(item?.key)" mat-icon-button matTooltip="More actions">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </a>
+      <mat-divider *ngIf="!last" mat-inset></mat-divider>
+    </ng-template>
+  </mat-nav-list>
