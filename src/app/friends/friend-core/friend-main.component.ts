@@ -3,11 +3,10 @@ import {Router} from '@angular/router';
 import { TdMediaService } from '@covalent/core';
 
 @Component({
-  selector: 'qs-main',
-  templateUrl: './main.layout.html',
+  selector: 'app-friend-main',
+  templateUrl: './friend-main.component.html',
 })
-
-export class MainLayout implements OnInit {
+export class FriendMainComponent implements OnInit {
   navmenu: Object[] = [{
     icon: 'looks_one',
     route: '.',
@@ -28,18 +27,12 @@ export class MainLayout implements OnInit {
     route: '.',
     title: 'Fourth item',
     description: 'Item description',
-  }, {
-    icon: 'looks_5',
-    route: '.',
-    title: 'Fifth item',
-    description: 'Item description',
-  },
+  }
   ];
 
   constructor(public media: TdMediaService, private router: Router) {}
 
   ngOnInit(): void {
-    // no op
   }
 
 }

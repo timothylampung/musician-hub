@@ -1,15 +1,19 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {DashboardPage} from './dashboard/dashboard.page';
+import {DashboardPage} from './main/dashboard/dashboard.page';
 import {MainLayout} from './main/main.layout';
-import {AssetDetailPage} from './dashboard/asset-detail.page';
-import { ProgressPage } from './progress.page/progress.page.component';
-import { CompaniesComponent } from './companies/companies.component';
-import { DocumentComponent } from './document/document.component';
+import { FriendMainComponent } from './friends/friend-core/friend-main.component';
+
 
 const routes: Routes = [
+
   {
     path: '',
+    redirectTo: 'musician-hub',
+    pathMatch: 'full',
+  },
+  {
+    path: 'musician-hub',
     component: MainLayout,
     children: [
       {
@@ -20,27 +24,25 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardPage,
-      },
-      {
-        path: 'detail/:assetNo',
-        component: AssetDetailPage,
-      },
-
-      {
-        path: 'progress',
-        component: ProgressPage,
-      },
-      {
-        path: 'companies',
-        component: CompaniesComponent,
-      },
-      {
-        path: 'documents',
-        component: DocumentComponent,
-      },
-
+      }
     ],
   },
+  {
+    path: 'musician-hub/friends',
+    component: FriendMainComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+      {
+        path: 'dashboard',
+        component: DashboardPage,
+      }
+    ],
+  },
+
 ];
 
 @NgModule({

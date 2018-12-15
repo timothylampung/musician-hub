@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Progress.PageComponent } from './progress.page.component';
+import { NavDrawerComponent } from './nav-drawer.component';
 
-describe('Progress.PageComponent', () => {
-  let component: Progress.PageComponent;
-  let fixture: ComponentFixture<Progress.PageComponent>;
+describe('NavDrawerComponent', () => {
+  let component: NavDrawerComponent;
+  let fixture: ComponentFixture<NavDrawerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Progress.PageComponent ]
+      declarations: [ NavDrawerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Progress.PageComponent);
+    fixture = TestBed.createComponent(NavDrawerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

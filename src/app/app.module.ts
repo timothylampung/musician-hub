@@ -7,29 +7,29 @@ import {AppRoutingModule} from './app.routes';
 import {HttpClientModule} from '@angular/common/http';
 import {MainLayout} from './main/main.layout';
 import {AssetService} from '../services/asset.service';
-import {AssetDetailPage} from './dashboard/asset-detail.page';
-import {DashboardPage} from './dashboard/dashboard.page';
-import {AssetCreatorDialog} from './dashboard/asset-creator.dialog';
+import {DashboardPage} from './main/dashboard/dashboard.page';
 import {FormsModule} from '@angular/forms';
-import {MatDialogModule} from '@angular/material';
-import { ProgressPage } from './progress.page/progress.page.component';
-import { CompaniesComponent } from './companies/companies.component';
-import { DocumentComponent } from './document/document.component';
-import { ProgressDialogComponent } from './progress.page/progress.dialog/progress.dialog.component';
+import { NavDrawerComponent } from './nav-drawer/nav-drawer.component';
+import { FriendsModule } from 'app/friends/friends.module';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { CrudService } from '../services/crud.service';
+
+export const firebaseConfig= {
+  apiKey: "AIzaSyB1GMuRr7xm0xxebfX6s5EXdIIsqt5nJyI",
+  authDomain: "financemanager-72e9c.firebaseapp.com",
+  databaseURL: "https://financemanager-72e9c.firebaseio.com",
+  projectId: "financemanager-72e9c",
+  storageBucket: "financemanager-72e9c.appspot.com",
+  messagingSenderId: "614962706114"
+}
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardPage,
-    AssetDetailPage,
-    AssetCreatorDialog,
     MainLayout,
-    ProgressPage,
-    CompaniesComponent,
-    DocumentComponent,
-    ProgressDialogComponent,
-
   ],
   imports: [
     AppRoutingModule,
@@ -37,10 +37,15 @@ import { ProgressDialogComponent } from './progress.page/progress.dialog/progres
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FriendsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
-  providers: [AssetService],
-  entryComponents: [AssetCreatorDialog,ProgressDialogComponent],
+  exports : [
+  ],
+  providers: [AssetService, CrudService],
+  entryComponents: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {

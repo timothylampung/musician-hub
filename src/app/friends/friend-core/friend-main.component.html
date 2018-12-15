@@ -30,6 +30,7 @@
         <mat-icon svgIcon="assets:github"></mat-icon>
       </a>
     </div>
+
     <mat-nav-list td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
       <ng-template let-item let-last="last" ngFor [ngForOf]="navmenu">
         <a mat-list-item>
@@ -53,5 +54,7 @@
         <span class="mat-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
       </div>
     </td-layout-footer>
+
+
   </td-layout-nav-list>
 </td-layout>

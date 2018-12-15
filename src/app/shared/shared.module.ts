@@ -34,6 +34,7 @@ import {
 } from '@covalent/core';
 
 import { CovalentTextEditorModule } from '@covalent/text-editor';
+import { NavDrawerComponent } from '../nav-drawer/nav-drawer.component';
 
 const FLEX_LAYOUT_MODULES: any[] = [
   FlexLayoutModule,
@@ -68,13 +69,13 @@ const COVALENT_MODULES: any[] = [
     COVALENT_MODULES,
 
   ],
-  declarations: [],
+  declarations: [NavDrawerComponent],
   exports: [
     ANGULAR_MODULES,
     MATERIAL_MODULES,
     FLEX_LAYOUT_MODULES,
     COVALENT_MODULES,
+    NavDrawerComponent
   ],
 })
-export class SharedModule {
-}
+export class SharedModule {}
