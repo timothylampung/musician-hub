@@ -17,7 +17,7 @@ import {
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule,MatGridListModule
+  MatTooltipModule, MatGridListModule, MatProgressSpinnerModule, MatProgressBarModule
 } from '@angular/material';
 import {
   CovalentCommonModule,
@@ -45,7 +45,7 @@ const ANGULAR_MODULES: any[] = [
 ];
 
 const MATERIAL_MODULES: any[] = [
-  MatButtonModule, MatCardModule, MatIconModule,
+  MatButtonModule, MatCardModule, MatIconModule, MatProgressSpinnerModule,MatProgressBarModule,
   MatListModule, MatMenuModule, MatTooltipModule,
   MatSlideToggleModule, MatInputModule, MatCheckboxModule,
   MatToolbarModule, MatSnackBarModule, MatSidenavModule,

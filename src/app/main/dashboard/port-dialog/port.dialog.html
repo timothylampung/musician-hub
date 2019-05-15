@@ -1,0 +1,11 @@
+  <mat-card-header>Looking For Available Wok Workstation</mat-card-header>
+  <mat-progress-bar *ngIf="showProgressDialog" mode="indeterminate"></mat-progress-bar>
+  <mat-nav-list flex>
+    <ng-template let-item let-i="index" let-last="last" ngFor [ngForOf]="ports?.ports">
+      <a (click)="onNoClick(item)" mat-list-item >
+        <img matListAvatar src="https://api.adorable.io/avatars/285/{{i}}@adorable.io.png" />
+        <h4 matLine style="color: black" class="cursor-pointer">{{item?.device}}</h4>
+        <span flex="100" class="mat-caption tc-grey-600">{{item?.description}}</span>
+      </a>
+    </ng-template>
+  </mat-nav-list>

@@ -14,15 +14,8 @@ import { FriendsModule } from 'app/friends/friends.module';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CrudService } from '../services/crud.service';
-
-export const firebaseConfig= {
-  apiKey: "AIzaSyB1GMuRr7xm0xxebfX6s5EXdIIsqt5nJyI",
-  authDomain: "financemanager-72e9c.firebaseapp.com",
-  databaseURL: "https://financemanager-72e9c.firebaseio.com",
-  projectId: "financemanager-72e9c",
-  storageBucket: "financemanager-72e9c.appspot.com",
-  messagingSenderId: "614962706114"
-}
+import { KitchenService } from '../services/kitchen.service';
+import { PortDialog } from './main/dashboard/port-dialog/port.dialog';
 
 
 @NgModule({
@@ -30,6 +23,7 @@ export const firebaseConfig= {
     AppComponent,
     DashboardPage,
     MainLayout,
+    PortDialog
   ],
   imports: [
     AppRoutingModule,
@@ -39,13 +33,11 @@ export const firebaseConfig= {
     HttpClientModule,
     FormsModule,
     FriendsModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
   ],
   exports : [
   ],
-  providers: [AssetService, CrudService],
-  entryComponents: [],
+  providers: [AssetService, KitchenService],
+  entryComponents: [PortDialog],
   bootstrap: [AppComponent],
 })
 export class AppModule {

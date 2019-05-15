@@ -11,29 +11,9 @@ export class MainLayout implements OnInit {
   navmenu: Object[] = [{
     icon: 'looks_one',
     route: '.',
-    title: 'First item',
-    description: 'Item description',
-  }, {
-    icon: 'looks_two',
-    route: '.',
-    title: 'Second item',
-    description: 'Item description',
-  }, {
-    icon: 'looks_3',
-    route: '.',
-    title: 'Third item',
-    description: 'Item description',
-  }, {
-    icon: 'looks_4',
-    route: '.',
-    title: 'Fourth item',
-    description: 'Item description',
-  }, {
-    icon: 'looks_5',
-    route: '.',
-    title: 'Fifth item',
-    description: 'Item description',
-  },
+    title: 'Recipe',
+    description: 'List of food recipe',
+  }
   ];
 
   constructor(public media: TdMediaService, private router: Router) {}

@@ -1,20 +1,19 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {DashboardPage} from './main/dashboard/dashboard.page';
-import {MainLayout} from './main/main.layout';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardPage } from './main/dashboard/dashboard.page';
+import { MainLayout } from './main/main.layout';
 import { FriendMainComponent } from './friends/friend-core/friend-main.component';
 import { FriendListComponent } from './friends/friend-list/friend-list.component';
-
 
 const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'musician-hub',
+    redirectTo: 'food-hub',
     pathMatch: 'full',
   },
   {
-    path: 'musician-hub',
+    path: 'food-hub',
     component: MainLayout,
     children: [
       {
@@ -25,24 +24,9 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardPage,
-      }
-    ],
-  },
-  {
-    path: 'musician-hub/friends',
-    component: FriendMainComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full',
       },
-      {
-        path: 'dashboard',
-        component: FriendListComponent,
-      }
     ],
-  },
+  }
 
 ];
 
