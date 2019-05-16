@@ -11,7 +11,7 @@ import { Recipe } from '../recipe.model';
 export class PortDialog implements OnInit{
 
   ports : {ports : [{device : string, description: string}]} ;
-  showProgressDialog = true;
+  showProgressDialog = false;
 
   constructor( public dialogRef: MatDialogRef<PortDialog>,
                private kitchenService: KitchenService,
@@ -19,11 +19,23 @@ export class PortDialog implements OnInit{
   }
 
   ngOnInit(): void {
+
+    if(!localStorage.getItem('ports')){
+      this.cachePorts()
+    }
+
+    this.ports = JSON.parse(localStorage.getItem('ports'))
+  }
+
+  cachePorts(){
+    this.ports = null;
+    this.showProgressDialog = true;
     this.kitchenService.getAvailablePorts()
       .subscribe((data : {ports : [{device : string, description: string}]})=>{
         console.log(data);
         this.showProgressDialog = data == undefined;
-        this.ports = data
+        localStorage.setItem('ports', JSON.stringify(data))
+        this.ports = JSON.parse(localStorage.getItem('ports'))
       })
   }
 

@@ -21,4 +21,11 @@ export class KitchenService {
     console.log('cooking');
    return this.http.post('http://127.0.0.1:8000/quickstart/cooks', JSON.stringify(result), httpOptions);
   }
+
+  cookStatus(result){
+    console.log('cooking');
+   return this.http.post('http://127.0.0.1:8000/quickstart/cooking-status', JSON.stringify(result), httpOptions);
+  }
+
+
 }
