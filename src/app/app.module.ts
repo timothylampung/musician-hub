@@ -16,14 +16,15 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CrudService } from '../services/crud.service';
 import { KitchenService } from '../services/kitchen.service';
 import { PortDialog } from './main/dashboard/port-dialog/port.dialog';
-
+import { RecipeDialog } from 'app/main/dashboard/recipe-dialog/recipe.dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardPage,
     MainLayout,
-    PortDialog
+    PortDialog,
+    RecipeDialog
   ],
   imports: [
     AppRoutingModule,
@@ -37,7 +38,7 @@ import { PortDialog } from './main/dashboard/port-dialog/port.dialog';
   exports : [
   ],
   providers: [AssetService, KitchenService],
-  entryComponents: [PortDialog],
+  entryComponents: [PortDialog, RecipeDialog],
   bootstrap: [AppComponent],
 })
 export class AppModule {

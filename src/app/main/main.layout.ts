@@ -8,12 +8,21 @@ import { TdMediaService } from '@covalent/core';
 })
 
 export class MainLayout implements OnInit {
-  navmenu: Object[] = [{
+  navmenu: Object[] = [
+    {
     icon: 'looks_one',
     route: '.',
-    title: 'Recipe',
-    description: 'List of food recipe',
-  }
+    title: 'Recipes',
+    description: 'List of food recipes',
+  },
+    {
+    icon: 'looks_two',
+    route: '.',
+    title: 'Orders',
+    description: 'List of orders',
+  },
+
+
   ];
 
   constructor(public media: TdMediaService, private router: Router) {}

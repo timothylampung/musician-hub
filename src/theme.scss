@@ -11,8 +11,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$primary: mat-palette($mat-indigo, 800);
-$secondary: mat-palette($mat-dark-purple, 800);
+$primary: mat-palette($mat-teal, 800);
+$secondary: mat-palette($mat-dark-lime, 800);
 $accent:  mat-palette($mat-orange, 800, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -118,7 +118,10 @@ ngx-charts-line-chart {
 }
 
 mat-card-title {
-  background: linear-gradient(-90deg,mat-color($primary), #9b5cff);
+  background: mat-color($accent);
+  width: 100%;
+  padding: 5%;
+  box-shadow: 2px 2px 2px #000000;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');@import url('https://fonts.googleapis.com/css?family=Roboto');

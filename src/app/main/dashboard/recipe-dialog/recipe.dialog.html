@@ -1,0 +1,76 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Add New Recipe</span>
+    <span class="example-spacer"></span>
+    <button (click)="submit()" mat-icon-button>
+      <mat-icon aria-label="save">save</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!--int preHeatDur = 0; // set the duration of the pre-heating duration as ZERO(0)-->
+<!--int oilPumpDur = 0;  // set the duration of the oil pumping duration as ZERO(0)-->
+<!--int waterPumpDur = 0;  // set the duration of the water pumping duration as ZERO(0)-->
+<!--int cookingTemp = 0; // set the temperature of the cook as ZERO(0)-->
+<!--int cookingDur = 0;-->
+
+<mat-progress-bar *ngIf="showProgressDialog" mode="indeterminate"></mat-progress-bar>
+
+  <br>
+  <br>
+
+  <div [formGroup]="mainForm" fxLayout="column">
+
+    <mat-form-field>
+      <mat-label>Recipe Name</mat-label>
+      <input formControlName="name" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Image Url</mat-label>
+      <input formControlName="imageUrl" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field *ngIf="false">
+      <mat-label>Image Url</mat-label>
+      <input formControlName="status" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Function</mat-label>
+      <mat-select formControlName="functionSelected"  value="16px" (selectionChange)="triggerResize()">
+        <mat-option value="1">COOKING</mat-option>
+        <mat-option value="2">COOLING</mat-option>
+        <mat-option value="3">FOOD MIXING</mat-option>
+        <mat-option value="4">MEAL POTIONING</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Preheat Duration (Second)</mat-label>
+      <input formControlName="preHeatDur" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Oil Pump Duration (Second)</mat-label>
+      <input formControlName="oilPumpDur" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Water Pump Duration (Second)</mat-label>
+      <input formControlName="waterPumpDur" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cooking Temperature (Celcius)</mat-label>
+      <input formControlName="cookingTemp" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cooking Duration (Second)</mat-label>
+      <input formControlName="cookingDur" matInput type="number">
+    </mat-form-field>
+
+
+
+  </div>
+

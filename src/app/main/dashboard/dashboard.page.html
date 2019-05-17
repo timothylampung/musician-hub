@@ -1,15 +1,36 @@
-<div fxLayout="row">
-  <mat-card (click)="openDialog(item)" *ngFor="let item of recipes" fxFlex="20">
+<div fxLayout="column">
+  <mat-card fxFlex>
+    <mat-card-header fxLayout="row wrap"><h4 style="color: black">Select Your Recipe</h4>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Please click on each card, a pop up dialog will appear and choose any available woks workstation</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+<div fxLayout="row wrap">
+
+  <mat-card  *ngFor="let item of recipes" fxFlex="15">
     <mat-card-header>
-      <mat-card-title><h3 style="color: white">{{item?.name}}</h3></mat-card-title>
-      <mat-card-subtitle>{{item?.description}}</mat-card-subtitle>
+      <h3 style="color: black">{{item?.name}}</h3>
     </mat-card-header>
     <img class="recipe-image" mat-card-image [src]="item?.imageUrl" alt="Photo of a Shiba Inu">
     <mat-card-content>
-      <ol>
-        <li *ngFor="let ingredient of item?.ingredients">{{ingredient.name}}</li>
-      </ol>
-      <h4>{{item?.cookingTime}}</h4>
+      <p>{{item?.status}}</p>
+      <mat-progress-bar *ngIf="item?.status!='' " mode="indeterminate"></mat-progress-bar>
     </mat-card-content>
+    <mat-card-actions fxLayout="row wrap">
+      <button (click)="openPortDialog(item)" mat-raised-button color="accent">COOK</button>
+      <button (click)="deleteReciepe(item)" mat-raised-button color="warn">Delete</button>
+    </mat-card-actions>
   </mat-card>
+
+</div>
+<div style="z-index:5; position : fixed;display : flex; align-self : flex-end; bottom : 8%; right: 5%">
+
+  <button (click)="openRecipeDialog()" mat-fab color="accent">
+    <mat-icon>note_add</mat-icon>
+  </button>
+
 </div>

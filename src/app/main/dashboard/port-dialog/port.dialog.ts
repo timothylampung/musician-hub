@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { KitchenService } from '../../../../services/kitchen.service';
-import { Recipe } from '../recipe.model';
+import { NewRecipe, Recipe } from '../recipe.model';
 
 @Component({
   selector : 'vol-port-dialog',
@@ -15,7 +15,7 @@ export class PortDialog implements OnInit{
 
   constructor( public dialogRef: MatDialogRef<PortDialog>,
                private kitchenService: KitchenService,
-               @Inject(MAT_DIALOG_DATA) public recipe: Recipe){
+               @Inject(MAT_DIALOG_DATA) public recipe: NewRecipe){
   }
 
   ngOnInit(): void {
